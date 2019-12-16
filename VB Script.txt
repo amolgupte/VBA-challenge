@@ -1,0 +1,46 @@
+Sub VBA_homework()
+
+Dim Ticker_Name As String
+Dim Opening_Price As Double
+Dim Closing_Price As Double
+Dim Percent_change_opening_price As Double
+Dim Percent_change_in_closing_price As Double
+Dim Stock_Total As Double
+Dim Count As Integer
+Dim ws As Worksheet
+Dim lastrow As Long
+
+
+
+' loop thorugh all ticker values
+
+Count = 2
+
+For i = 2 To lastrow
+
+If Cells(i + 1, 1).Value <> Cells(i, 1).Value Then
+ 
+Ticker_Name = Cells(i, 1).Value
+
+'Stock_Total = Stock_Total + Cells(i, 7).Value
+
+If Cells(i + 1, 1).Value <> Cells(1, 2).Value Then
+Opening_Price = Cells(1, 3).Value
+
+
+
+
+Range("I" & Count).Value = Cells(i, 1)
+'Range("N" & Count).Value = Cells(i, 7)
+
+
+Count = Count + 1
+
+
+End If
+End If
+
+Next i
+
+
+End Sub
